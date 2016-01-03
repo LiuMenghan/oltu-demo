@@ -1,0 +1,4 @@
+rootProject.name = 'oltu-demo'
+
+include 'server'
+include 'client'

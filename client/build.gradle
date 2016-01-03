@@ -1,0 +1,16 @@
+apply plugin: 'groovy'
+apply plugin: 'eclipse'
+apply plugin: 'maven'
+apply plugin: 'war'
+
+dependencies {
+	compile 'org.apache.oltu.oauth2:org.apache.oltu.oauth2.common:1.0.1'
+}
+
+uploadArchives {
+	repositories {
+		mavenDeployer {
+			pom.artifactId = 'oltu-client'
+		}
+	}
+}

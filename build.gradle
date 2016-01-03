@@ -1,0 +1,39 @@
+
+
+def spring = [
+	version : "4.2.4.RELEASE",
+	boot : [
+		version : "1.3.1.RELEASE"
+	]
+];
+
+def log4jVersion = "2.5";
+
+allprojects{
+
+	apply plugin: 'groovy'
+	apply plugin: 'eclipse'
+	apply plugin: 'maven'
+	
+	repositories {
+		//Use oschina maven repository instead of maven central repository where you are in China.
+		maven { url "http://maven.oschina.net/content/groups/public/" }
+		//mavenCentral()
+	};
+
+	configurations {
+			compile
+	}
+	
+	dependencies {
+		compile 'org.codehaus.groovy:groovy-all:2.3.10'
+		compile "org.springframework.boot:spring-boot-starter:${spring.boot.version}"
+		compile "org.springframework.boot:spring-boot-starter-jetty:${spring.boot.version}"
+		compile "org.springframework:spring-webmvc:${spring.version}"
+		compile 'net.sf.ehcache:ehcache:2.9.1'
+		compile "org.apache.logging.log4j:log4j-slf4j-impl:${log4jVersion}"
+		compile "org.apache.logging.log4j:log4j-core:${log4jVersion}"
+		compile 'org.apache.commons:commons-lang3:3.4'
+		compile 'org.apache.oltu.oauth2:org.apache.oltu.oauth2.parent:1.0.1'
+	}	
+}

@@ -1,0 +1,13 @@
+dependencies {
+	compile 'org.apache.oltu.oauth2:org.apache.oltu.oauth2.authzserver:1.0.1'
+	
+	testCompile 'junit:junit:4.11'
+}
+
+uploadArchives {
+	repositories {
+		mavenDeployer {
+			pom.artifactId = 'oltu-server'
+		}
+	}
+}
