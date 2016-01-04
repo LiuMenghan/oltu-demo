@@ -17,7 +17,7 @@
 	<mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/oauth/**" />
-			<bean class="cn.lmh.oauth.server.web.interceptor.OAuthInterceptor">
+			<bean class="cn.lmh.oauth.server.web.interceptor.ResourceInterceptor">
 				<property name="cacheService" ref="oauth.server.service.cache" />
 			</bean>
 		</mvc:interceptor>
