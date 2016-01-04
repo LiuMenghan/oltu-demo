@@ -22,7 +22,7 @@ public class CacheServiceImpl implements CacheService {
 	
 	private CacheManager cacheManager = CacheManager.newInstance();
 		
-	private Cache cache = new Cache(new CacheConfiguration());
+	private Cache cache = new Cache(new CacheConfiguration("local", 1000));
 	
 	@PostConstruct
 	public void init() throws Exception {
