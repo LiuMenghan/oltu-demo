@@ -14,5 +14,13 @@
     <context:annotation-config />
     <context:component-scan base-package="cn.lmh.oauth.server" /> 
     <import resource="applicationContext-utils.xml" />
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/oauth/**" />
+			<bean class="cn.lmh.oauth.server.web.interceptor.OAuthInterceptor">
+				<property name="cacheService" ref="oauth.server.service.cache" />
+			</bean>
+		</mvc:interceptor>
+	</mvc:interceptors>
   
 </beans>  
